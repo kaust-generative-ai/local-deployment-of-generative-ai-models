@@ -50,7 +50,15 @@ TODO
 
 ## LLaMA C++
 
-TODO
+The instructions below will walk you through the process of installing the software required for the episodes of this lesson that focus on LLaMA C++ using the environment configuration files and build scripts in the [kaust-generative-ai/local-deployment-llama-cpp](https://github.com/kaust-generative-ai/local-deployment-llama-cpp) repository on GitHub.
+
+### Clone the Git Repository
+
+```bash
+git clone https://github.com/kaust-generative-ai/local-deployment-llama-cpp.git
+cd local-deployment-llama-cpp/
+```
+
 
 ### Create the Conda Environment
 
@@ -70,7 +78,14 @@ TODO
 
 ## Llamafile
 
-TODO
+The instructions below will walk you through the process of installing the software required for the episodes of this lesson that focus on Llamafile using the environment configuration files and build scripts in the [kaust-generative-ai/local-deployment-llamafile](https://github.com/kaust-generative-ai/local-deployment-llamafile) repository on GitHub.
+
+### Clone the Git Repository
+
+```bash
+git clone https://github.com/kaust-generative-ai/local-deployment-llamafile.git
+cd local-deployment-llamafile/
+```
 
 ### Create the Conda Environment
 
@@ -90,7 +105,14 @@ TODO
 
 ## Ollama
 
-TODO
+The instructions below will walk you through the process of installing the software required for the episodes of this lesson that focus on Ollama using the environment configuration files and build scripts in the [kaust-generative-ai/local-deployment-ollama](https://github.com/kaust-generative-ai/local-deployment-ollama) repository on GitHub.
+
+### Clone the Git Repository
+
+```bash
+git clone https://github.com/kaust-generative-ai/local-deployment-ollama.git
+cd local-deployment-ollama/
+```
 
 ### Create the Conda Environment
 
