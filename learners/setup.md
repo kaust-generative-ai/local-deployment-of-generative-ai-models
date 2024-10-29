@@ -59,10 +59,35 @@ git clone https://github.com/kaust-generative-ai/local-deployment-llama-cpp.git
 cd local-deployment-llama-cpp/
 ```
 
-
 ### Create the Conda Environment
 
-TODO
+Creating the Conda environment for LLaMA C++ depends on your operating system, whether your CPU supports specific hardware acceleration, and whether you have access to a GPU. Create a Conda environment in a sub-directory `env/` of your project directory by running one of following shell scripts.
+
+::: tab
+
+### CPU Only (Linux, Mac, Windows)
+
+```bash
+./bin/create-conda-env.sh
+```
+
+### Metal GPU (Mac)
+
+In order to support Metal GPU acceleration available on Macs with ARM CPUs you need to install a few extra dependecies. These dependencies are added to the  `environment-metal-gpu.yml` and `requirements-metal-gpu.txt` files.
+
+```bash
+./bin/create-conda-env.sh environment-metal-gpu.yml
+```
+
+### NVIDIA GPU (Linux, Windows)
+
+In order to support NVIDIA GPU acceleration you need to install a few extra dependecies. These dependencies are added to the `environment-nvidia-gpu.yml` and `requirements-nvidia-gpu.txt` files.
+
+```bash
+./bin/create-conda-env.sh environment-nvidia-gpu.yml
+```
+
+:::
 
 ### Install LLaMA C++
 
