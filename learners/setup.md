@@ -164,7 +164,7 @@ This command does the following.
 
 Depending on what CPU and GPU hardware you have available, there are other build scripts that use different compiler flags to optimize LLaMA C++ binaries.
 
-::: tag
+::: tab
 
 ### Mac (ARM CPU, Metal GPU)
 
@@ -193,6 +193,8 @@ conda run --prefix ./env --live-stream ./bin/build-llama-cpp-nvidia-gpu.sh
 ```
 
 For a detailed discussion of additional NVIDIA GPU compilation options that might improve performance on particular GPU architectures see the [LLaMA C++ build documentation](https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md#cuda).
+
+:::
 
 ::::::::::::::::::::::::
 
