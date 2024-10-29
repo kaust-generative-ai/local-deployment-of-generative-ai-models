@@ -44,7 +44,9 @@ TODO
 
 :::
 
-## Software Setup
+## LLaMA C++, Llamafile, Ollama, and Friends
+
+The exact software stack that you need to install depends on which episodes on the lesson that you plan to work through.
 
 :::::::::::::::: spoiler
 
@@ -91,11 +93,108 @@ In order to support NVIDIA GPU acceleration you need to install a few extra depe
 
 ### Install LLaMA C++
 
-TODO
+For convenience there is an installer script which can be used to download pre-compiled [LLaMA C++][LLaMA C++](https://github.com/ggerganov/llama.cpp) binaries for various OS, CPU, and GPU architectures and install the binaries into the `bin/` directory of the Conda environment. You can find the latest [release](https://github.com/ggerganov/llama.cpp/releases) for LLaMA C++ on GitHub and pass the link to the zip archive for your desired release to the script as a command line argument.
+
+```bash
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+For reference, here are a few examples.
+
+::: tab
+
+### Linux (Ubuntu, Intel CPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=llama-b3868-bin-ubuntu-x64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+### Mac (ARM CPU, Metal GPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=lllama-b3868-bin-macos-arm64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+### Mac (Intel CPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=llama-b3868-bin-macos-x64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+### Windows (Intel CPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=llama-b3868-bin-win-avx512-x64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+:::
 
 ### Build LLaMA C++ from Source (Optional)
 
-TODO
+If there isn't an official release available for your target operating system, then you will need to build LLaMA C++ from source. Don't worry, we have created build scripts to make this process as painless as possible. After creating the Conda environment using the instructions above you can build LLaMA C++ by running a command similar to the following to build LLaMA C++ from source within the activated Conda environment so that the build process has access to the required build tools compiler toolchain.
+
+```bash
+conda run --prefix ./env --live-stream ./bin/build-llama-cpp.sh
+```
+
+This command does the following.
+
+1. Properly configures the Conda environment using the `conda run` command prior to running the `build-llama-cpp.sh` script.
+2. Clones LLaMA C++ into `./src/llama-cpp`.
+4. Builds LLaMA C++ with support for CPU acceleration using OpenBlas in `./build/llama-cpp`.
+5. Installs the binaries into the `bin/` directory of the Conda environment.
+6. Removes the `./src/llama-cpp` directory as it is no longer needed.
+7. Removes the `./build/llama-cpp` directory as it is no longer needed.
+
+Depending on what CPU and GPU hardware you have available, there are other build scripts that use different compiler flags to optimize LLaMA C++ binaries.
+
+::: tab
+
+### Mac (ARM CPU, Metal GPU)
+
+#### Install XCode and Command Line Tools
+
+If you are using Mac OS, then you will need to install [XCode](https://developer.apple.com/xcode/) and then run the following command to install XCode Command Line Tools in order to build from source.
+
+```bash
+xcode-select --install
+```
+
+#### Support for Metal GPU acceleration
+
+After creating the Conda environment you can build LLaMA C++ by running the following command.
+
+```bash
+conda run --prefix ./env --live-stream ./bin/build-llama-cpp-metal-gpu.sh
+```
+
+### Linux (NVIDIA GPU)
+
+After creating the Conda environment you can build LLaMA C++ by with support for GPU acceleration by running the following command.
+
+```bash
+conda run --prefix ./env --live-stream ./bin/build-llama-cpp-nvidia-gpu.sh
+```
+
+For a detailed discussion of additional NVIDIA GPU compilation options that might improve performance on particular GPU architectures see the [LLaMA C++ build documentation](https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md#cuda).
+
+:::
 
 ::::::::::::::::::::::::
 
