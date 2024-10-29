@@ -1,1 +1,1 @@
-# Local Deployment of Generative AI Models Lesson
+# Local Deployment of Generative AI Models
