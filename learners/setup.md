@@ -43,3 +43,61 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 TODO
 
 :::
+
+## Software Setup
+
+:::::::::::::::: spoiler
+
+## LLaMA C++
+
+TODO
+
+### Create the Conda Environment
+
+TODO
+
+### Install LLaMA C++
+
+TODO
+
+### Build LLaMA C++ from Source (Optional)
+
+TODO
+
+::::::::::::::::::::::::
+
+:::::::::::::::: spoiler
+
+## Llamafile
+
+TODO
+
+### Create the Conda Environment
+
+TODO
+
+### Install Llamafile
+
+TODO
+
+### Build Llamafile from Source (Optional)
+
+TODO
+
+::::::::::::::::::::::::
+
+:::::::::::::::: spoiler
+
+## Ollama
+
+TODO
+
+### Create the Conda Environment
+
+TODO
+
+### Install Ollama
+
+TODO
+
+::::::::::::::::::::::::
