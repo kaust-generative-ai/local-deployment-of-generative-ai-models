@@ -44,7 +44,9 @@ TODO
 
 :::
 
-## Software Setup
+## LLaMA C++, Llamafile, Ollama, and Friends
+
+The exact software stack that you need to install depends on which episodes on the lesson that you plan to work through.
 
 :::::::::::::::: spoiler
 
@@ -91,7 +93,57 @@ In order to support NVIDIA GPU acceleration you need to install a few extra depe
 
 ### Install LLaMA C++
 
-TODO
+For convenience there is an installer script which can be used to download pre-compiled [LLaMA C++][LLaMA C++](https://github.com/ggerganov/llama.cpp) binaries for various OS, CPU, and GPU architectures and install the binaries into the `bin/` directory of the Conda environment. You can find the latest [release](https://github.com/ggerganov/llama.cpp/releases) for LLaMA C++ on GitHub and pass the link to the zip archive for your desired release to the script as a command line argument.
+
+```bash
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+For reference, here are a few examples.
+
+::: tab
+
+### Linux (Ubuntu, Intel CPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=llama-b3868-bin-ubuntu-x64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+### Mac (ARM CPU, Metal GPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=lllama-b3868-bin-macos-arm64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+### Mac (Intel CPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=llama-b3868-bin-macos-x64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+```
+
+### Windows (Intel CPU)
+
+```bash
+DOWNLOAD_URL=https://github.com/ggerganov/llama.cpp/releases/download/
+TAG=b3868
+RELEASE_ARCHIVE=llama-b3868-bin-win-avx512-x64.zip
+RELEASE_URL="$DOWNLOAD_URL"/"$TAG"/"$RELEASE_ARCHIVE"
+./bin/install-llama-cpp.sh "$RELEASE_URL"
+
+:::
+
 
 ### Build LLaMA C++ from Source (Optional)
 
