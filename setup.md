@@ -14,41 +14,32 @@ FIXME: place any data you want learners to use in `episodes/data` and then use
 -->
 Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
 
-## Software Setup
+## Install Miniforge, Conda, Mamba
 
-::::::::::::::::::::::::::::::::::::::: discussion
+If you haven't already done so, install [Miniforge](https://github.com/conda-forge/miniforge). Miniforge provides minimal installers for [Conda](https://conda.io/) and [Mamba](https://github.com/mamba-org/mamba) specific to [conda-forge](https://conda-forge.org/), with the following features pre-configured:
 
-### Details
+   * Packages in the base environment are obtained from the `conda-forge` channel.
+   * The `conda-forge` channel is set as the default (and only) channel.
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+Conda/mamba will be the primary package managers used to install the required Python dependencies. For convenience, a script is included that will download and install Miniforge, Conda, and Mamba.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### Windows
-
-Use PuTTY
-
-::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### MacOS
-
-Use Terminal.app
-
-::::::::::::::::::::::::
-
-
-:::::::::::::::: spoiler
+::: tab
 
 ### Linux
 
-Use Terminal
+```bash
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh
+```
 
-::::::::::::::::::::::::
+### Mac
 
+```bash
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh
+```
+### Windows
+
+TODO
+
+:::
