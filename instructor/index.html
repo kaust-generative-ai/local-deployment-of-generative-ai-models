@@ -410,7 +410,61 @@ repository on GitHub.</p>
 </div>
 <div class="section level3">
 <h3 id="create-the-conda-environment">Create the Conda Environment<a class="anchor" aria-label="anchor" href="#create-the-conda-environment"></a></h3>
-<p>TODO</p>
+<p>Creating the Conda environment for LLaMA C++ depends on your
+operating system, whether your CPU supports specific hardware
+acceleration, and whether you have access to a GPU. Create a Conda
+environment in a sub-directory <code>env/</code> of your project
+directory by running one of following shell scripts.</p>
+<div class="tabs">
+<nav><div id="nav-tab-2" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-2-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-1" type="button" role="tab" aria-controls="nav-tabpanel-2-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-2-1">
+  CPU Only (Linux, Mac, Windows)
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-2-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-2" type="button" role="tab" aria-controls="nav-tabpanel-2-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-2-2">
+  Metal GPU (Mac)
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-2-3" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-3" type="button" role="tab" aria-controls="nav-tabpanel-2-3" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-2-3">
+  NVIDIA GPU (Linux, Windows)
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-2" class="tab-content">
+<div id="nav-tabpanel-2-1" class="tab-pane show active" aria-labelledby="nav-tab-2-1" role="tabpanel">
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">./bin/create-conda-env.sh</span></span></code></pre>
+</div>
+</div>
+<div id="nav-tabpanel-2-2" class="tab-pane" aria-labelledby="nav-tab-2-2" role="tabpanel">
+<p>In order to support Metal GPU acceleration available on Macs with ARM
+CPUs you need to install a few extra dependecies. These dependencies are
+added to the <code>environment-metal-gpu.yml</code> and
+<code>requirements-metal-gpu.txt</code> files.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">./bin/create-conda-env.sh</span> environment-metal-gpu.yml</span></code></pre>
+</div>
+</div>
+<div id="nav-tabpanel-2-3" class="tab-pane" aria-labelledby="nav-tab-2-3" role="tabpanel">
+<p>In order to support NVIDIA GPU acceleration you need to install a few
+extra dependecies. These dependencies are added to the
+<code>environment-nvidia-gpu.yml</code> and
+<code>requirements-nvidia-gpu.txt</code> files.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">./bin/create-conda-env.sh</span> environment-nvidia-gpu.yml</span></code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="install-llama-c">Install LLaMA C++<a class="anchor" aria-label="anchor" href="#install-llama-c"></a></h3>
@@ -441,11 +495,11 @@ scripts in the <a href="https://github.com/kaust-generative-ai/local-deployment-
 repository on GitHub.</p>
 <div class="section level3">
 <h3 id="clone-the-git-repository-1">Clone the Git Repository<a class="anchor" aria-label="anchor" href="#clone-the-git-repository-1"></a></h3>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/kaust-generative-ai/local-deployment-llamafile.git</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">cd</span> local-deployment-llamafile/</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/kaust-generative-ai/local-deployment-llamafile.git</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="bu">cd</span> local-deployment-llamafile/</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -481,11 +535,11 @@ scripts in the <a href="https://github.com/kaust-generative-ai/local-deployment-
 repository on GitHub.</p>
 <div class="section level3">
 <h3 id="clone-the-git-repository-2">Clone the Git Repository<a class="anchor" aria-label="anchor" href="#clone-the-git-repository-2"></a></h3>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/kaust-generative-ai/local-deployment-ollama.git</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="bu">cd</span> local-deployment-ollama/</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/kaust-generative-ai/local-deployment-ollama.git</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="bu">cd</span> local-deployment-ollama/</span></code></pre>
 </div>
 </div>
 <div class="section level3">
