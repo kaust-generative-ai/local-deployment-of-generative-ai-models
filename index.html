@@ -380,7 +380,7 @@ episodes on the lesson that you plan to work through.</p>
   LLaMA C++
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>The instructions below will walk you through the process of
 installing the software required for the episodes of this lesson that
@@ -579,13 +579,26 @@ C++ binaries.</p>
   </h3>
 </button>
 <button class="nav-link" id="nav-tab-4-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-4-2" type="button" role="tab" aria-controls="nav-tabpanel-4-2" aria-selected="false">
-  <h3 class="tab-header" id="nav-tab-heading-4-2">
+  <h4 class="tab-header" id="nav-tab-heading-4-2">
+  Install XCode and Command Line Tools
+  </h4>
+</button>
+<button class="nav-link" id="nav-tab-4-3" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-4-3" type="button" role="tab" aria-controls="nav-tabpanel-4-3" aria-selected="false">
+  <h4 class="tab-header" id="nav-tab-heading-4-3">
+  Support for Metal GPU acceleration
+  </h4>
+</button>
+<button class="nav-link" id="nav-tab-4-4" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-4-4" type="button" role="tab" aria-controls="nav-tabpanel-4-4" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-4-4">
   Linux (NVIDIA GPU)
   </h3>
 </button>
 </div>
 </nav><div id="nav-tabContent-4" class="tab-content">
 <div id="nav-tabpanel-4-1" class="tab-pane show active" aria-labelledby="nav-tab-4-1" role="tabpanel">
+
+</div>
+<div id="nav-tabpanel-4-2" class="tab-pane" aria-labelledby="nav-tab-4-2" role="tabpanel">
 <p>If you are using Mac OS, then you will need to install <a href="https://developer.apple.com/xcode/" class="external-link">XCode</a> and then run the
 following command to install XCode Command Line Tools in order to build
 from source.</p>
@@ -594,6 +607,8 @@ from source.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre>
 </div>
+</div>
+<div id="nav-tabpanel-4-3" class="tab-pane" aria-labelledby="nav-tab-4-3" role="tabpanel">
 <p>After creating the Conda environment you can build LLaMA C++ by
 running the following command.</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -602,7 +617,7 @@ running the following command.</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">conda</span> run <span class="at">--prefix</span> ./env <span class="at">--live-stream</span> ./bin/build-llama-cpp-metal-gpu.sh</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-4-2" class="tab-pane" aria-labelledby="nav-tab-4-2" role="tabpanel">
+<div id="nav-tabpanel-4-4" class="tab-pane" aria-labelledby="nav-tab-4-4" role="tabpanel">
 <p>After creating the Conda environment you can build LLaMA C++ by with
 support for GPU acceleration by running the following command.</p>
 <div class="codewrapper sourceCode" id="cb15">
@@ -630,7 +645,7 @@ C++ build documentation</a>.</p>
   Llamafile
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>The instructions below will walk you through the process of
 installing the software required for the episodes of this lesson that
@@ -670,7 +685,7 @@ repository on GitHub.</p>
   Ollama
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>The instructions below will walk you through the process of
 installing the software required for the episodes of this lesson that
@@ -731,7 +746,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.5" class="external-link">sandpaper (0.18.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.0" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -753,8 +768,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-md/index.html",
   "identifier": "https://carpentries.github.io/workbench-template-md/index.html",
   "dateCreated": "2024-10-31",
-  "dateModified": "2026-02-24",
-  "datePublished": "2026-02-24"
+  "dateModified": "2026-03-03",
+  "datePublished": "2026-03-03"
 }
 
   </script><script>
